@@ -13,9 +13,9 @@ class Dir(Enum):
 #reflects vector x over axis axis
 def reflect(x,axis):
 	if axis==X:
-		return xreflect*x
+		return np.dot(xreflect,x)
 	else:
-	    return yreflect*x
+	    return np.dot(yreflect,x)
 #translates vector x by vector h
 def translate(x,h):
 	return x+h
@@ -25,6 +25,6 @@ def dilate(x,c):
 #rotates vector x 90 degrees in direction clockwise or counterclockwise
 def rotate(x,dir):
 	if dir==CLOCKWISE:
-		return crotate*x
+		return np.dot(crotate,x)
 	else:
-		return ccrotate*x
+		return np.dot(ccrotate,x)
