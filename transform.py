@@ -1,5 +1,9 @@
-import numpy
+import numpy as np
 from enum import Enum
+ccrotate=np.array([[0,-1],[1,0]])
+crotate=np.array([[0,1],[-1,0]])
+xreflect=np.array([1,0],[0,-1])
+yreflect=np.array([-1,0],[0,1])
 class Axis(Enum):
 	X=1
 	Y=2
@@ -8,13 +12,19 @@ class Dir(Enum):
 	COUNTERCLOCKWISE=2
 #reflects vector x over axis axis
 def reflect(x,axis):
-	return None
+	if axis==X:
+		return xreflect*x
+	else:
+	    return yreflect*x
 #translates vector x by vector h
 def translate(x,h):
-	return None
+	return x+h
 #dilates vector x by constant c
 def dilate(x,c):
-	return None
+	return x*c
 #rotates vector x 90 degrees in direction clockwise or counterclockwise
 def rotate(x,dir):
-	return None
+	if dir==CLOCKWISE:
+		return crotate*x
+	else:
+		return ccrotate*x
