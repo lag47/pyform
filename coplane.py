@@ -15,9 +15,13 @@ class CoPlane:
 			vectors.add(transform.translate(x,h))
 	def reflect_shape(self,s,axis):
 		for x in s:
-			vectors.add()
+			vectors.add(transform.reflect(s,axis))
 	def rotate_shape(self,s,dir):
-		return None
+		for x in s:
+			vectors.add(transform.rotate(s,dir))
+	def dilate_shape(self,s,c):
+		for x in s:
+			vectors.add(transform.dilate(s,c))
 	def vectors():
 		return copy.deepcopy(vectors)
 

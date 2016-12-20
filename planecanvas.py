@@ -16,12 +16,22 @@ class PlaneCanvas:
 			y=scale*vectors[i+1]+origin
 			canvas.create_line(x[0],x[1],y[0],y[1])
 	def add_shape(self,s):
-		return None
+		vectors=plane.vectors()
+		for x in vectors:
+			plane.insert_vector(x)
+		draw()
 	def add_vector(self,x):
-		return None
+		plane.insert_vector(x)
+		draw()
 	def reflect_shape(self,s,axis):
-		return None
+		plane.reflect_shape(s,axis)
+		draw()
 	def translate_shape(self,s,h):
-		return None
+		plane.translate_shape(s,h)
+		draw()
 	def rotate_shape(self,s,dir):
-		return None
+		plane.rotate_shape(s,dir)
+		draw()
+	def dilate_shape(self,s,c):
+		plane.dilate_shape(s,c)
+		draw()
