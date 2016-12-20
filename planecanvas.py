@@ -11,7 +11,7 @@ class PlaneCanvas:
 		self.canvas=canvas
 	def draw(c):
 		vectors=plane.vectors()
-		for x in vectors:
-			y=x#transform to scale
+		for i in range(0,len(vectors)-1):
+			y=x
 			canvas.create_line(y[0],y[1])
 		return None
