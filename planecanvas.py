@@ -9,7 +9,9 @@ class PlaneCanvas:
 		self.origin=origin
 		self.scale=scale
 		self.canvas=canvas
-	def draw(self,c):
+	def draw_axes(self):
+		return None
+	def draw_points(self,c):
 		vectors=plane.vectors()
 		for i in range(0,len(vectors)-1):
 			x=scale*vectors[i]+origin
@@ -19,19 +21,19 @@ class PlaneCanvas:
 		vectors=plane.vectors()
 		for x in vectors:
 			plane.insert_vector(x)
-		draw()
-	def add_vector(self,x):
+		draw_points()
+	def add_point(self,x):
 		plane.insert_vector(x)
-		draw()
+		draw_points()
 	def reflect_shape(self,s,axis):
 		plane.reflect_shape(s,axis)
-		draw()
+		draw_points()
 	def translate_shape(self,s,h):
 		plane.translate_shape(s,h)
-		draw()
+		draw_points()
 	def rotate_shape(self,s,dir):
 		plane.rotate_shape(s,dir)
-		draw()
+		draw_points()
 	def dilate_shape(self,s,c):
 		plane.dilate_shape(s,c)
-		draw()
+		draw_points()
